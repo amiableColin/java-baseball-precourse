@@ -20,7 +20,11 @@ public class Application {
 
             while (true) {
                 System.out.print("숫자를 입력해주세요 : ");
-                user_input = s.next().toCharArray();
+                temp = s.next();
+                if (temp.chars().filter(c -> (0 <= c - '0' && c - '0' <= 9)).count() != 3) {
+                    throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
+                }
+                user_input = temp.toCharArray();
                 int strike = 0;
                 int ball = 0;
                 // 스트라이크 찾는 로직
