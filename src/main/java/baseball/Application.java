@@ -20,8 +20,7 @@ public class Application {
 
             while (true) {
                 System.out.print("숫자를 입력해주세요 : ");
-                temp = s.next();
-                user_input = temp.toCharArray();
+                user_input = s.next().toCharArray();
                 int strike = 0;
                 int ball = 0;
                 // 스트라이크 찾는 로직
