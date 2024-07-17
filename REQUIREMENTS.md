@@ -11,7 +11,7 @@
 - [X] 이 같은 과정을 반복해 컴퓨터가 선택한 3개의 숫자를 모두 맞히면 게임이 종료된다.
 - [X] 게임을 종료한 후 게임을 다시 시작하거나 완전히 종료할 수 있다.
 - [X] 3항 연산자를 쓰지 않는다.
-- [ ] 사용자가 잘못된 값을 입력할 경우 IllegalArgumentException을 발생시킨 후 애플리케이션은 종료되어야 한다.
+- [X] 사용자가 잘못된 값을 입력할 경우 IllegalArgumentException을 발생시킨 후 애플리케이션은 종료되어야 한다.
 - [ ] indent(인덴트, 들여쓰기) depth를 3이 넘지 않도록 구현한다. 2까지만 허용한다.
 - [ ] 함수(또는 메소드)가 한 가지 일만 하도록 최대한 작게 만들어라.
-- [ ] JDK에서 기본 제공하는 Random, Scanner API 대신 camp.nextstep.edu.missionutils에서 제공하는 Randoms, Console API를 활용해 구현해야 한다.
+- [X] JDK에서 기본 제공하는 Random, Scanner API 대신 camp.nextstep.edu.missionutils에서 제공하는 Randoms, Console API를 활용해 구현해야 한다.
