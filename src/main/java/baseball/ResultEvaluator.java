@@ -1,8 +1,8 @@
 package baseball;
 
 public class ResultEvaluator {
-    private String correctAnswer;
-    private String userInput;
+    private final String correctAnswer;
+    private final String userInput;
     private int strike;
     private int ball;
     public ResultEvaluator(String correctAnswer, String userInput) {

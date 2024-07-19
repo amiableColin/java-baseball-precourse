@@ -7,17 +7,32 @@ public class Application {
     public static String generateCorrectAnswer() {
         String correctAnswer = Integer.toString(Randoms.pickNumberInRange(1, 10));
         String temp = "";
-        while (true) {
+        do {
             temp = Integer.toString(Randoms.pickNumberInRange(1, 10));
             if (!correctAnswer.contains(temp)) correctAnswer += temp;
-            if (correctAnswer.length() == 3) break;
-        }
+        } while (correctAnswer.length() != 3);
         return correctAnswer;
     }
-    public static void main(String[] args) {
-        int restart = 0;
 
-        while (restart != 2) {
+    public static boolean isRestart() {
+        int restart = 0;
+        try {
+            restart = Integer.parseInt(Console.readLine());
+            if (restart != 1 && restart != 2) {
+                throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
+            }
+        }
+        catch (InputMismatchException e) {
+            throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
+        }
+        return restart == 1;
+    }
+
+
+    public static void main(String[] args) {
+        boolean restart = false;
+
+        do {
             String correctAnswer = generateCorrectAnswer();
             System.out.println("생성된 숫자: " + correctAnswer); // 디버깅용
 
@@ -33,18 +48,11 @@ public class Application {
                 if (result.getStrike() == 3) {
                     System.out.println("3개의 숫자를 모두 맞추셨습니다! 게임 종료");
                     System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
-                    try {
-                        restart = Integer.parseInt(Console.readLine());
-                        if (restart != 1 && restart != 2) {
-                            throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
-                        }
-                    }
-                    catch (InputMismatchException e) {
-                        throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
-                    }
+                    restart = isRestart();
                     break;
                 }
             }
         }
+        while (restart);
     }
 }
