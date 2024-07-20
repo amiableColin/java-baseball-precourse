@@ -14,9 +14,11 @@ public class Application {
 
     private static boolean isRestart() {
         int restart = 0;
+
         System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
         String temp = Console.readLine();
         validateIsIntegers(temp);
+
         restart = Integer.parseInt(temp);
         validateOneOrTwo(restart);
 

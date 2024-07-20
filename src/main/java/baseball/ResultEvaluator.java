@@ -5,6 +5,7 @@ public class ResultEvaluator {
     private final String userInput;
     private int strike;
     private int ball;
+
     public ResultEvaluator(String correctAnswer, String userInput) {
         this.correctAnswer = correctAnswer;
         this.userInput = userInput;
@@ -38,6 +39,7 @@ public class ResultEvaluator {
         }
         return result;
     }
+
     public int getStrike() {return strike;}
     public int getBall() {return ball;}
 }
