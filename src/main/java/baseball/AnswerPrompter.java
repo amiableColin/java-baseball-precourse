@@ -8,7 +8,7 @@ public class AnswerPrompter {
 
     public AnswerPrompter() {
         this.answer = promptAnswer();
-        velidateInput();
+        validateInput();
     }
 
     private static String promptAnswer() {
@@ -17,7 +17,7 @@ public class AnswerPrompter {
         return prompt;
     }
 
-    private void velidateInput() {
+    private void validateInput() {
         if (this.answer.chars().filter(c -> (0 <= c - '0' && c - '0' <= 9)).count() != 3) {
             throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
         }
