@@ -11,11 +11,12 @@ public class ResultEvaluator {
     }
 
     private void calculateStrikesAndBalls() {
+
         for (int i = 0; i < this.userInput.length(); i++) {
-            if (correctAnswer.indexOf(this.userInput.charAt(i)) == i) {
+            if (correctAnswer.charAt(i) == this.userInput.charAt(i)) {
                 this.strike++;
             }
-            else if (correctAnswer.indexOf(this.userInput.charAt(i)) != -1) {
+            else if (correctAnswer.contains(String.valueOf(this.userInput.charAt(i)))) {
                 this.ball++;
             }
         }
@@ -23,17 +24,17 @@ public class ResultEvaluator {
 
     public String getResult() {
         this.calculateStrikesAndBalls();
-        String result = "";
-        if (this.ball != 0 || this.strike != 0) {
-            if (this.ball != 0) {
-                result += this.ball + "볼 ";
-            }
-            if (this.strike != 0) {
-                result += this.strike + "스트라이크";
-            }
+
+        if (this.ball == 0 && this.strike == 0) {
+            return "낫싱";
         }
-        else {
-            result = "낫싱";
+
+        String result = "";
+        if (this.ball != 0) {
+            result += this.ball + "볼 ";
+        }
+        if (this.strike != 0) {
+            result += this.strike + "스트라이크";
         }
         return result;
     }
